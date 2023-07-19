@@ -11,7 +11,7 @@ jobs:
       - name: Build Image
         run: |
            echo "building docker image"
-           docker build -t getting-started:new .
+           docker build -t tcs-consec:new .
       
       - name: TCS CLI Scan
         env:
@@ -20,11 +20,11 @@ jobs:
           TCS_PROJECT_ID: ${{ secrets.TCS_PROJECT_ID }}
         
         run: |
-          echo ~~~~~Installation of TCS CLI..
+          echo ~~~ Installation of TCS CLI ~~~
           wget $TCS_CLI_DOWNLOAD_URL
           
           file_name=`echo $TCS_CLI_DOWNLOAD_URL | cut -f10 -d "/"`
           tar -xf $file_name && chmod +x tcs
           
-          echo ~~~~~Starting TCS CLI Image scan ..
-          ./tcs consec image getting-started:new --wait
+          echo ~~~ Starting TCS CLI Image scan ~~~
+          ./tcs consec image tcs-consec:new --wait

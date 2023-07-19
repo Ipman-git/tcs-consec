@@ -10,7 +10,7 @@ jobs:
           
       - name: Build Image
         run: |
-           echo "building docker image"
+           echo "Building docker image"
            docker build -t tcs-consec:new .
       
       - name: TCS CLI Scan

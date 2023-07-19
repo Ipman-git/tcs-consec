@@ -27,4 +27,4 @@ jobs:
           tar -xf $file_name && chmod +x tcs
           
           echo ~~~~~Starting TCS CLI Image scan ..
-          ./tcs consec image getting-started:new --wait
+          ./tcs consec image getting-started:new --project=17be4154-c446-4fcf-b416-433cc198c2ee --wait
